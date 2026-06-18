@@ -73,12 +73,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <span className="text-8xl">👨‍🔧</span>
-                  <p className="mt-4 text-blue-800 font-semibold text-lg">Licensed & Insured</p>
-                  <p className="text-blue-600 text-sm">License #PLB-2024-7890</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <img src="/images/team-plumbers.jpg" alt="Our plumbing team" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-5">
                 <p className="text-3xl font-extrabold text-blue-600">15+</p>

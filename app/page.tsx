@@ -3,13 +3,15 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero with image */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: "60px 60px",
-          }} />
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero-plumber.jpg"
+            alt="Professional plumber at work"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-700/80" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="max-w-3xl">
@@ -21,8 +23,7 @@ export default function Home() {
               Available 24/7 for Emergencies
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-              Expert Plumbing
-              <br />
+              Expert Plumbing<br />
               <span className="text-blue-200">You Can Trust</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-xl">
@@ -39,7 +40,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap items-center gap-6 mt-12 text-sm text-blue-200">
               <span>⭐ 4.9/5 on Google</span>
-              <span>✅ Licensed & Insured</span>
+              <span>✅ Licensed &amp; Insured</span>
               <span>🏆 15+ Years Experience</span>
             </div>
           </div>
@@ -116,8 +117,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials highlight */}
+      {/* Trust section with image */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="/images/handshake.jpg"
+                alt="Happy customer with plumber"
+                className="w-full h-auto"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                Trusted by Thousands of Homeowners
+              </h2>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                We've earned a 4.9/5 rating across 2,400+ reviews because we treat every home
+                like it's our own. Our licensed plumbers arrive on time, in uniform, with fully
+                stocked trucks — ready to solve your problem the right way.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Licensed, bonded, and fully insured",
+                  "Upfront, flat-rate pricing — no hidden fees",
+                  "100% satisfaction guarantee on all work",
+                  "Clean, uniformed, background-checked technicians",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="text-green-500 mt-1 flex-shrink-0">✅</span>
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/about" className="btn-primary">
+                Learn More About Us →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials highlight */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title">What Our Customers Say</h2>
           <p className="section-subtitle">Don't take our word for it — hear from the people we've helped.</p>
@@ -132,11 +174,9 @@ export default function Home() {
                   {[1, 2, 3, 4, 5].map((i) => <span key={i}>⭐</span>)}
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6 italic">&quot;{t.text}&quot;</p>
-                <div className="flex items-center gap-3 border-t pt-4">
-                  <div>
-                    <p className="font-semibold text-gray-800">{t.name}</p>
-                    <p className="text-sm text-gray-400">{t.loc}</p>
-                  </div>
+                <div className="border-t pt-4">
+                  <p className="font-semibold text-gray-800">{t.name}</p>
+                  <p className="text-sm text-gray-400">{t.loc}</p>
                 </div>
               </div>
             ))}

@@ -69,8 +69,11 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/tools-workshop.jpg" alt="Plumbing workshop" className="w-full h-full object-cover opacity-25" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Our Plumbing Services</h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             From emergency repairs to full repiping — licensed professionals, upfront pricing, guaranteed work.
