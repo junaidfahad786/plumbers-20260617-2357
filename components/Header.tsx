@@ -4,10 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/testimonials", label: "Reviews" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -17,7 +18,6 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">🔧</span>
             <span className="text-xl font-bold text-gray-800">
@@ -25,23 +25,21 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-gray-600 hover:text-blue-600 font-medium transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a href="tel:+15551234567" className="btn-primary text-sm !py-2 !px-4">
+            <a href="tel:+155****4567" className="btn-primary text-sm !py-2 !px-4">
               📞 (555) 123-4567
             </a>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 text-gray-600"
             onClick={() => setOpen(!open)}
@@ -58,21 +56,20 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav */}
       {open && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="block py-3 text-gray-600 hover:text-blue-600 font-medium"
               onClick={() => setOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
-            href="tel:+15551234567"
+            href="tel:+155****4567"
             className="btn-primary w-full mt-2 text-center"
             onClick={() => setOpen(false)}
           >
